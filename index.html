@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành trình Văn hóa Đồng Nai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables cho màu sắc hiện đại */
+        :root {
+            --primary-color: #2E7D32; /* Xanh lá mảng rừng Nam Cát Tiên */
+            --secondary-color: #F57F17; /* Cam đất nung Gốm Biên Hòa */
+            --bg-color: #F4F6F8;
+            --text-color: #333333;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Hero Section */
+        header {
+            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(46, 125, 50, 0.9)), url('https://images.unsplash.com/photo-1596423735880-5f2a689b903e?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Container chính */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        /* Gridview Hàng Ngang (CSS Grid) */
+        .grid-view {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        /* Card Design (Thiết kế thẻ hiện đại) */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            opacity: 0; /* Cho hiệu ứng JS */
+            transform: translateY(20px); /* Cho hiệu ứng JS */
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Animation Class */
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #222;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Văn hóa Đồng Nai</h1>
+        <p>Hành trình khám phá di sản, con người và vùng đất gian lao mà anh dũng.</p>
+    </header>
+
+    <main class="container">
+        
+        <h2 class="section-title">Tin tức mới nhất</h2>
+        <section class="grid-view">
+            <article class="card">
+                <img src="image/1.png" alt="Tin tức 1">
+                <div class="card-content">
+                    <h3 class="card-title">Lễ hội Sayangva của người Chơro</h3>
+                    <p class="card-desc">Lễ hội cúng Thần Lúa mừng mùa màng bội thu của đồng bào dân tộc thiểu số tại Đồng Nai diễn ra sôi nổi.</p>
+                    <a href="#" class="read-more">Xem chi tiết</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="image/2.png" alt="Tin tức 2">
+                <div class="card-content">
+                    <h3 class="card-title">Bảo tồn di tích Văn miếu Trấn Biên</h3>
+                    <p class="card-desc">Dự án trùng tu và phát huy giá trị văn hóa của Văn miếu Trấn Biên - biểu tượng học thuật phương Nam.</p>
+                    <a href="#" class="read-more">Xem chi tiết</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="image/3.png" alt="Tin tức 3">
+                <div class="card-content">
+                    <h3 class="card-title">Khai mạc triển lãm Gốm Biên Hòa</h3>
+                    <p class="card-desc">Triển lãm tôn vinh dòng gốm mỹ nghệ danh tiếng với lịch sử hơn 300 năm hình thành và phát triển.</p>
+                    <a href="#" class="read-more">Xem chi tiết</a>
+                </div>
+            </article>
+        </section>
+
+        <h2 class="section-title">Hoạt động nổi bật</h2>
+        <section class="grid-view">
+            <article class="card">
+                <img src="image/4.png" alt="Hoạt động 1">
+                <div class="card-content">
+                    <h3 class="card-title">Đạp xe xuyên rừng Nam Cát Tiên</h3>
+                    <p class="card-desc">Hành trình khám phá đa dạng sinh học và hòa mình vào thiên nhiên hoang dã.</p>
+                    <a href="#" class="read-more">Tham gia ngay</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="image/5.png" alt="Hoạt động 2">
+                <div class="card-content">
+                    <h3 class="card-title">Giao lưu Đờn ca tài tử</h3>
+                    <p class="card-desc">Thưởng thức nghệ thuật truyền thống Nam Bộ bên dòng sông Đồng Nai thơ mộng.</p>
+                    <a href="#" class="read-more">Tham gia ngay</a>
+                </div>
+            </article>
+        </section>
+
+        <h2 class="section-title">Sản phẩm nổi bật</h2>
+        <section class="grid-view">
+            <article class="card">
+                <img src="image/6.png" alt="Sản phẩm 1">
+                <div class="card-content">
+                    <h3 class="card-title">Bưởi Tân Triều</h3>
+                    <p class="card-desc">Đặc sản nức tiếng với vỏ mỏng, múi mọng nước và vị ngọt thanh đặc trưng của vùng đất cù lao.</p>
+                    <a href="#" class="read-more">Tìm hiểu thêm</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="image/7.png" alt="Sản phẩm 2">
+                <div class="card-content">
+                    <h3 class="card-title">Gốm mỹ nghệ Biên Hòa</h3>
+                    <p class="card-desc">Sản phẩm thủ công tinh xảo mang đậm dấu ấn giao thoa văn hóa độc đáo.</p>
+                    <a href="#" class="read-more">Tìm hiểu thêm</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="image/8.png" alt="Sản phẩm 3">
+                <div class="card-content">
+                    <h3 class="card-title">Mít Tố Nữ Long Khánh</h3>
+                    <p class="card-desc">Trái cây đặc sản với hương thơm ngào ngạt, múi dẻo và vị ngọt lịm.</p>
+                    <a href="#" class="read-more">Tìm hiểu thêm</a>
+                </div>
+            </article>
+        </section>
+
+        <h2 class="section-title">Khu du lịch sinh thái</h2>
+        <section class="grid-view">
+            <article class="card">
+                <img src="image/9.png" alt="Khu du lịch 1">
+                <div class="card-content">
+                    <h3 class="card-title">Vườn Quốc gia Cát Tiên</h3>
+                    <p class="card-desc">Khu dự trữ sinh quyển thế giới với hệ động thực vật vô cùng phong phú.</p>
+                    <a href="#" class="read-more">Khám phá</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="image/10.png" alt="Khu du lịch 2">
+                <div class="card-content">
+                    <h3 class="card-title">Khu du lịch Bửu Long</h3>
+                    <p class="card-desc">Được mệnh danh là "Vịnh Hạ Long thu nhỏ" của miền Nam với hồ nước trong xanh và núi đá.</p>
+                    <a href="#" class="read-more">Khám phá</a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="image/11.png" alt="Khu du lịch 3">
+                <div class="card-content">
+                    <h3 class="card-title">Khu du lịch Suối Mơ</h3>
+                    <p class="card-desc">Điểm đến lý tưởng để xua tan cái nóng với những dòng suối mát lạnh từ mạch nước ngầm.</p>
+                    <a href="#" class="read-more">Khám phá</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Hành trình Văn hóa Đồng Nai. Sử dụng Responsive đa thiết kế (Mobile-First).</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+
+            const observerOptions = {
+                threshold: 0.1, // Chạy hiệu ứng khi 10% thẻ xuất hiện trên màn hình
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target); // Ngừng theo dõi sau khi đã hiện
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
